@@ -189,7 +189,7 @@ def NN_LARS(A,b,delta):
 
 def sms_DRT(Ar,Ai,Z,lamb=None,i_L=0,f=None):
     import numpy as np
-    import lsqlin
+    import lsq_lin
     Zr = Z.real
     Zi = Z.imag
     if lamb is None:
