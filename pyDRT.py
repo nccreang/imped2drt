@@ -218,7 +218,7 @@ def sms_DRT(Ar,Ai,Z,lamb=None,i_L=0,f=None):
                 beta_aug = X[:,index]
                 beta_hat = (1+reg)**0.5*beta_aug
                 rp = np.sum(beta_hat) # need to check which axis to sum
-                dum = lsqlin.lsqnonneg(2*np.pi*f,Zi-(np.matmul(Ai,beta_hat)),{'show_progress': False}) 
+                dum = lsq_lin.lsqnonneg(2*np.pi*f,Zi-(np.matmul(Ai,beta_hat)),{'show_progress': False}) 
                 LL = dum['x'][0]
             LL = dum['x'][0]
         
