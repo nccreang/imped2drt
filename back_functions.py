@@ -122,7 +122,7 @@ def load_data(imped,filename,dims,plot = True,KKT=True,drt=True,t=None,Ar=None,A
         fig.tight_layout()
 
         if drt is True:
-            t = np.logspace(np.log10(1/np.max(w))-2,np.log10(1/np.min(w))+2,len(f)*1.5)
+            t = np.logspace(-np.log10(np.max(w))-2,-np.log10(np.min(w))+2,len(f)*1.5)
             Ar,Ai = pyDRT.cal_Basis(w,t)
             DRT_data = calc_DRT(wog,Zexpog,t=t,Ar=Ar,Ai=Ai,L=L)
             tau = DRT_data['tau']
