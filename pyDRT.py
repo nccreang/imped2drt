@@ -127,7 +127,7 @@ def NN_LARS(A,b,delta):
       return df,err,X,Cp
     j = I[j]
     
-    if ~lassocond:
+    if lassocond==0:
       R  = cholinsert(R, A[:,j], A[:,P]);
       P = np.hstack((P,j))
       I = np.delete(I,np.argwhere(I == j))
