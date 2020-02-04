@@ -19,7 +19,7 @@ def bash_load(impeds,filenames,dims,data_type = 'Y',plot=True,KKT=True,drt=True,
         if data_type == 'Y':
             Zdata = convertYtoZ(impeds[ii])
         else:
-            if impeds[ii][0,2]!=0:
+            if int(impeds[ii][0,2])!=0 or impeds[ii][0,1]>1e2: #assumes length between electrodes will be less than 100 cm
                 dims = dims
                 Zdata = impeds[ii]
             else:
