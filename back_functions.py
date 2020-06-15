@@ -131,6 +131,7 @@ def load_data(imped,filename,dims,plot = True,KKT=True,drt=True,t=None,Ar=None,A
             Zisim = DRT_data['Zimag']
             
             axs[1,1].semilogx(tau,drt,'k',linewidth=2)
+            axs[1,1].ticklabel_format(style='sci',axis='y',scilimits=(0,0))
             axs[1,1].set_ylabel('DRT')
             axs[1,1].set_xlabel('Relaxation Time (s)')
             axs[0,0].plot(Zrsim,-Zisim,'--g',label='DRT simulation')
