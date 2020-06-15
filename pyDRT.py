@@ -259,6 +259,7 @@ def sms_DRT(Ar,Ai,Z,lamb=None,i_L=0,f=None):
 
 def pyDRT(w,Z,t=None,Ar=None,Ai=None,L=0):  
     import numpy as np
+    from scipy.integrate import simps
     if t is None:
         NF = len(w)
         NT = int(NF*1.5)
@@ -274,6 +275,9 @@ def pyDRT(w,Z,t=None,Ar=None,Ai=None,L=0):
     model.update({
             'tau' : tc,
             })
+    normalized = model['beta']/simps(model['beta'],model['tau'])
+    model.update({'beta': normalized})
+
     return model
 
 def plot_sim(model,Z,t):
