@@ -275,7 +275,7 @@ def pyDRT(w,Z,t=None,Ar=None,Ai=None,L=0):
     model.update({
             'tau' : tc,
             })
-    normalized = model['beta']/simps(model['beta'],model['tau'])
+    normalized = model['beta']/simps(model['beta'],np.log(model['tau']))
     model.update({'beta': normalized})
 
     return model
